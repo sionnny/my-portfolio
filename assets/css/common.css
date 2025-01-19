@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+
+/*폰트구글*/
+
+body {
+    font-size: 1rem;
+    font-family: "Noto Sans KR", sans-serif;
+    /*폰트*/
+
+    line-height: 1.5;
+    color: #262626;
+}
+
+.container {
+    margin: 0 auto;
+    width: 1459px
+}
+
+/*헤더영역*/
+.header {
+    width: 100%;
+    height: 157px;
+    position: fixed;
+    background-color: white;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+.header-wrap {
+    height: 157px;
+    width: 1520px;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    position: relative;
+    ;
+}
+
+.header .header-wrap .gnb ul {
+    display: flex;
+    /*세로였던 ul내부 태그들의 가로 정렬*/
+    justify-content: center;
+    /*가운데정렬*/
+    margin-left: 122px;
+
+}
+
+.header .header-wrap .gnb ul li {
+    padding: 0 44px;
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+
+.header .header-wrap .gnb ul li:first-child {
+    padding-left: 0;
+}
+
+
+.header .header-wrap .gnb ul li .input {
+    color: #262626;
+}
+
+.header .header-wrap .gnb ul li a.on,
+.header .header-wrap .gnb ul li a:hover {
+    color: #FE3434
+}
+
+
+.header .header-wrap .icons {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+.header .header-wrap .icons div {
+    text-align: center;
+    font-size: 0.8125rem;
+}
+
+.header .header-wrap .icons .icon1 p {
+    color: #FE3434;
+
+}
+
+/*헤더영역*/
+
+/*메인비쥬얼*/
+.visual {
+    width: 100%;
+    height: 100vh;
+    background-color: #FE3434;
+
+}
+
+.visual .container {
+    width: 1520px;
+    height: 100vh;
+    margin: 0 auto;
+    position: relative;
+}
+
+
+
+/*푸터영역*/
+footer{
+    background-color: rgb(246, 246, 246);
+}
+.foot-wrap {
+    margin: 0 auto;
+    width: 1460px;
+    height: 270px;
+    padding-top: 36px;
+}
+
+.foot-wrap .f-line {
+    width: 100%;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.foot-top {
+    line-height: 43px;
+}
+
+.foot-top ul {
+    display: flex;
+    height: 43px;
+    width: 624px;
+
+
+}
+
+.foot-top ul li {
+    margin-right: 40px;
+}
+.foot-top ul li:first-child{
+    color:#FE3434
+}
+.foot-top ul li:last-child {
+    margin: 0;
+}
+
+.foot-bottom-container {
+    width: 838px;
+    height: 110px;
+    font-size: 0.75rem;
+}
+
+address {
+    font-style: normal;
+    display: inline-block;
+    margin-top: 35px;
+}
+
+span {
+    display: inline-block;
+    margin-right: 20px;
+
+    color: #4D4D4D;
+}
+
+span:last-child {
+    color: #999999;
+}

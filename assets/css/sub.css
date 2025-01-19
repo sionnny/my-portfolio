@@ -1,0 +1,239 @@
+.sub-visual-wrap {
+  position: relative;
+  /* height: 4142px; */
+}
+
+.sub-visual-wrap .top-img-wrap .text-wrap {
+  text-align: center;
+  position: absolute;
+  margin-left: 800px;
+  margin-top: -180px;
+}
+
+.sub-visual-wrap .top-img-wrap .text-wrap h3 {
+  font-size: 3rem;
+  color: #fff;
+}
+
+.sub-visual-wrap .top-img-wrap .text-wrap p {
+  font-size: 1.125rem;
+  color: #fff;
+  font-weight: 300;
+  letter-spacing: -0.4px;
+}
+
+/* <!--이미지 밑 작은 카테고리바--> */
+.pro-arrow-wrap {
+  width: 1920px;
+  height: 45px;
+  background-color: #fe6767;
+  /* margin-top: -6px; */
+}
+
+.pro-arrow-wrap .product-arrow {
+  width: 250px;
+  height: 45px;
+  background-color: #fff;
+  display: flex;
+  margin-left: -10px;
+}
+
+.pro-arrow-wrap .product-arrow p {
+  font-size: 1.125rem;
+  color: #fe3434;
+  line-height: 45px;
+  margin-left: 25px;
+  font-weight: 500;
+}
+
+.pro-arrow-wrap .product-arrow img {
+  margin-left: 24px;
+  margin-top: 9px;
+  display: inline;
+}
+
+/*증상별 카테고리*/
+.category-wrap {
+  width: 1459px;
+  height: 350px;
+  margin: 0 auto;
+  background-color: rgb(255, 255, 255);
+  margin-top: 100px;
+}
+
+.category-wrap section {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.category-wrap div {
+  width: 157px;
+  height: 157px;
+  border: 1px solid #ffe6e6;
+  padding-top: 38px;
+  position: relative;
+}
+
+.category-wrap div img {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  top: -10px;
+}
+
+.category-wrap div p {
+  text-align: center;
+  padding-top: 5px;
+  color: #fe3434;
+}
+
+.category-wrap section:first-child {
+  margin-bottom: 36px;
+}
+.category-wrap .empty {
+  background-color: #fefcfc;
+  border: 1px solid #ffe6e6;
+}
+
+/*제품검색*/
+
+.pro-search {
+  width: 1459px;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+
+.pro-search .search-top-wrap {
+  position: relative;
+}
+
+.pro-search .search-top-wrap h2 {
+  color: #000000;
+  font-weight: 500;
+}
+
+.pro-search .search-top-wrap .searchbar {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1287px;
+}
+
+.pro-search .search-top-wrap .searchbar .pro-search .search {
+  height: 30px;
+  position: absolute;
+}
+
+/*검색필드*/
+.pro-search .search-top-wrap .searchbar input {
+  position: relative;
+  border: 3px solid #fc7b7b;
+  height: 50px;
+  width: 1287px;
+  padding-left: 32px;
+  font-size: 1rem;
+  border-radius: 3px;
+  outline: 0;
+}
+
+/*돋보기 아이콘*/
+.pro-search .search-top-wrap .searchbar a {
+  position: absolute;
+  right: 20px;
+  top: 13px;
+}
+
+/* 추천검색어란 */
+.pro-search .search-under-wrap h3 {
+  color: #747474;
+  font-weight: 500;
+}
+
+.pro-search .search-under-wrap button {
+  border: none;
+  border-radius: 50px;
+  background-color: #f1f1f1;
+  padding: 6px 46px;
+  margin-right: 12px;
+  color: #707070;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 400;
+}
+
+.pro-search .search-under-wrap {
+  width: 1350px;
+  height: 82px;
+  display: flex;
+  margin-top: 44px;
+}
+
+.pro-search .search-under-wrap button:hover {
+  background-color: #fe3434;
+  color: #fff;
+  transition: 0.5s;
+}
+
+.pro-search .search-under-wrap .under-wrap {
+  margin-left: 85px;
+}
+
+.pro-search .search-under-wrap .search-under1 {
+  margin-bottom: 16px;
+}
+
+/* 제품들 */
+.pro-img {
+  width: 1460px;
+  margin: 0 auto;
+  margin-top: 150px;
+}
+
+.pro-text::before {
+  content: "\e3af";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  padding-right: 10px;
+}
+
+.pro-text .next:before {
+  content: "\f105";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  padding-right: 20px;
+}
+.pro-img .prod-wrap {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 30px;
+}
+.pro-img .prod-wrap:last-child {
+  margin-bottom: 300px;
+}
+.pro-img .prod-wrap .prod {
+  background-color: #fff;
+  width: 350px;
+  height: 460px;
+  text-align: center;
+  border: 1px solid #e6e6e6;
+  overflow: hidden;
+}
+
+.pro-img .prod-wrap .prod:hover img {
+  -webkit-transform: scale(1.3);
+  transform: scale(1.05);
+  transition: 0.5s;
+}
+
+.pro-img .prod-wrap .prod img {
+  width: 289px;
+  height: 286px;
+}
+
+.pro-img .prod-wrap .prod h3 {
+  margin-top: 30px;
+  margin-bottom: 12px;
+}

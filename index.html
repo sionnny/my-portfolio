@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>경남제약</title>
+  <link rel="stylesheet" href="./assets/css/reset.css" />
+  <link rel="stylesheet" href="./assets/css/main.css" />
+  <link rel="stylesheet" href="./assets/css/common.css" />
+  <link href="./assets/img/title.png" rel="shortcut icon" type="image/x-icon" />
+  <script src="./assets/js/jquery-3.7.1.min.js"></script>
+  <script src="./assets/js/jquery-ui.min.js"></script>
+  <script src="./assets/js/common.js"></script>
+  <script src="https://kit.fontawesome.com/02bc14eab4.js" crossorigin="anonymous"></script>
+
+  <!-- <script>
+    $(document).ready(function() {
+      let currentSlide = 0;
+      const totalSlides = $('.slide-list').length;
+
+      function goToSlide(slideIndex) {
+          currentSlide = slideIndex;
+          const offset = -slideIndex * 800;
+          $('.slider').animate({'margin-left': offset}, 1500);
+          updateIndicators();
+      }
+      
+
+      function updateIndicators() {
+          $('.button div').removeClass('active');
+          $('.button div[data-slide="' + currentSlide + '"]').addClass('active');
+      }
+
+      $('.button div').click(function() {
+          const slideIndex = $(this).data('slide');
+          goToSlide(slideIndex);
+      });
+
+      // 자동 슬라이드 (5초마다 슬라이드 변경)
+      setInterval(function() {
+          currentSlide = (currentSlide + 1) % totalSlides;
+          goToSlide(currentSlide);
+      }, 5000);
+    }); -->
+    <script>
+      $(document).ready(function() {
+        let currentSlide = 1;
+        const slideWidth = 800;
+        const totalSlides = $('.slide-list').length;
+    
+        // 첫 슬라이드와 마지막 슬라이드 복제
+        const firstSlide = $('.slide-list').first().clone();
+        const lastSlide = $('.slide-list').last().clone();
+    
+        // 슬라이더에 복제한 슬라이드 추가
+        $('.slider').append(firstSlide);
+        $('.slider').prepend(lastSlide);
+    
+        // 초기 슬라이드 위치 설정 (첫 번째 슬라이드로 이동)
+        $('.slider').css('margin-left', -slideWidth);
+    
+        function goToSlide(slideIndex) {
+          const offset = -slideIndex * slideWidth;
+          $('.slider').animate({'margin-left': offset}, 1500, function() {
+            // 마지막 슬라이드에서 첫 번째 슬라이드로 자연스럽게 이동
+            if (slideIndex === totalSlides + 1) {
+              currentSlide = 1;
+              $('.slider').css('margin-left', -slideWidth);
+            }
+            // 첫 번째 슬라이드에서 마지막 슬라이드로 자연스럽게 이동
+            else if (slideIndex === 0) {
+              currentSlide = totalSlides;
+              $('.slider').css('margin-left', -totalSlides * slideWidth);
+            }
+          });
+          updateIndicators();
+        }
+    
+        function updateIndicators() {
+          $('.button div').removeClass('active');
+          $('.button div[data-slide="' + (currentSlide - 1) % totalSlides + '"]').addClass('active');
+        }
+    
+        $('.button div').click(function() {
+          const slideIndex = $(this).data('slide') + 1; // 복제된 슬라이드 때문에 +1
+          goToSlide(slideIndex);
+        });
+    
+        // 자동 슬라이드 (5초마다 슬라이드 변경)
+        setInterval(function() {
+          currentSlide++;
+          goToSlide(currentSlide);
+        }, 5000);
+      });
+    </script>
+
+</head>
+
+<body style="overflow-x: hidden">
+  <!-- <div class="container"> -->
+  <!--헤더부분-->
+  <header class="header">
+    <div class="header-wrap">
+      <h1>
+        <a href="index.html"><img src="./assets/img/LOGO.png" alt="LEMONA경남제약" /></a>
+      </h1>
+      <nav class="gnb">
+        <ul>
+          <li><a href="./index.html">회사소개</a></li>
+          <li><a href="./sub.html">제품소개</a></li>
+          <li><a href="#">투자정보</a></li>
+          <li><a href="#">홍보센터</a></li>
+        </ul>
+      </nav>
+      <div class="icons">
+        <div class="icon1">
+          <a href="#">
+            <img src="./assets/icon/ICON_bag.png" alt="lemona mall" />
+            <p>LEMONA MALL</p>
+          </a>
+        </div>
+        <div class="icon2">
+          <a href="#">
+            <img src="./assets/icon/ICON_cs.png" alt="cs" />
+            <p>CS</p>
+          </a>
+        </div>
+        <div class="icon3">
+          <a href="#">
+            <img src="./assets/icon/ICON_emplyee.png" alt="carrer" />
+            <p>CAREER</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!--헤더부분-->
+
+  <!--메인비쥬얼-->
+  <section class="visual">
+    <div class="container">
+      <div class="text-top">
+        <h2>
+          온국민이 사랑하는 비타민 명가,<br />
+          경남제약입니다.
+        </h2>
+      </div>
+
+      <div class="text-area">
+        <div class="text-left">
+          <p class="p-title">korea</p>
+          <h2>No. 1</h2>
+          <p class="p-article">
+            국내 최초 분말 형태<br />
+            비타민 보충제
+          </p>
+        </div>
+        <div class="text-center">
+          <p class="p-title">sales</p>
+          <h2>47억포</h2>
+          <p class="p-article">연 평균 약 1억6800포</p>
+        </div>
+        <div class="text-right">
+          <p class="p-title">brand</p>
+          <h2>베스트셀러</h2>
+          <p class="p-article">2023년 기준 18년 연속 대상</p>
+        </div>
+      </div>
+      <!-- <div class="ellipse">
+          <img src="./img/lemonatop.png" alt="lemonatop" />
+        </div> -->
+
+      <!-- 캐러셀 -->
+      <div class="main-img main-img-clip">
+        <div class="slide-wrap">
+          <div class="slider">
+            <div class="slide-list"><img src="./assets/img/imgs01.png" alt="" /></div>
+            <div class="slide-list"><img src="./assets/img/imgs2.png" alt="" /></div>
+            <div class="slide-list"><img src="./assets/img/imgs3.png" alt="" /></div>
+            <div class="slide-list"><img src="./assets/img/imgs4.png" alt="" /></div>
+          </div>
+        </div>
+      </div>
+
+      <svg class="svg" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 812 510">
+        <defs>
+          <style>
+            .cls-1 {
+              fill: #ffffff;
+            }
+          </style>
+        </defs>
+        <clipPath id="img">
+          <path class="cls-1"
+            d="M336.5,250A188.82,188.82,0,0,0,212,296.61C179.26,193.62,82.85,119-31,119c-140.83,0-255,114.17-255,255C-286,507.08-184,616.33-54,628v1H336.5C441.16,629,526,544.16,526,439.5S441.16,250,336.5,250Z"
+            transform="translate(286 -119)" />
+      </svg>
+      <!-- //캐러셀 -->
+
+      <div class="button">
+        <div class="btn1 active" data-slide="0"></div>
+        <div class="btn2" data-slide="1"></div>
+        <div class="btn2" data-slide="2"></div>
+        <div class="btn2" data-slide="3"></div>
+
+      </div>
+    </div>
+  </section>
+
+  <!--제품비쥬얼-->
+  <section class="product">
+    <div class="product-wrap">
+      <div class="search-wrap">
+        <!--검색란-->
+        <div class="pro-search">
+          <h3>Product</h3>
+          <div class="search">
+            <input type="search" placeholder="제품명을 검색하세요." />
+            <a href="#"><img src="./assets/icon/iconamoon_search.png" alt="search" /></a>
+          </div>
+        </div>
+        <!--이동버튼란-->
+        <div class="subpage-btn">
+          <button class="lemona-site">
+            <img src="./assets/icon/lemona_home.png" alt="bags" />레모나몰 바로가기
+          </button>
+          <button class="pham-search">
+            <img src="./assets/icon/mdi_drugs.png" alt="drugs" />판매약국 검색하기
+          </button>
+        </div>
+      </div>
+      <!--/////////제품사진란-->
+      <article class="product-img-wrap">
+        <div class="pro-1">
+          <div class="pro-imgwrap">
+            <a href="#"><img src="./assets/img/product1.png" alt="product" /></a>
+          </div>
+          <h3>레모나산</h3>
+          <p>
+            기미,주근깨,피로회복까지!<br />
+            맛있는 비타민 습관
+          </p>
+          <div class="btn-pro">
+            <button class="more">상세보기</button>
+            <button class="site">브랜드 사이트</button>
+          </div>
+        </div>
+
+        <div class="line1"></div>
+        <!--/////////제품란2-->
+        <div class="pro-2">
+          <div class="pro-imgwrap2">
+            <a href="#"><img src="./assets/img/product2.png" alt="product" /></a>
+          </div>
+          <h3>피엠외용액</h3>
+          <p>Since 1957,<br />무좀엔 역시 피엠</p>
+          <div class="btn-pro">
+            <button class="more">상세보기</button>
+            <button class="site">브랜드 사이트</button>
+          </div>
+        </div>
+
+        <div class="line2"></div>
+        <!--/////////제품란3-->
+        <div class="pro-3">
+          <div class="pro-imgwrap3">
+            <a href="#"><img src="./assets/img/product3.png" alt="product" /></a>
+          </div>
+          <h3>자하생력액</h3>
+          <p>약국에서 만나는 피로회복 솔루션<br />인태반 자양강장 드링크</p>
+          <div class="btn-pro">
+            <button class="more">상세보기</button>
+            <button class="site">브랜드 사이트</button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!--회사소개-->
+  <section class="about-com-wrap">
+    <div class="about-txt-wrap">
+      <h3>ABOUT KYUNG NAM</h3>
+      <br />
+      <p>
+        SINCE 1957, 경남제약은 인간 생명의 존엄성과 인류의 건강을 최우선의
+        가치로 삼으며<br />일반의약품 (OTC)전문 제약회사로 한길만을 걸어오고
+        있습니다.<br />앞으로도 우수한 품질의 제품 개발과 최상의 서비스로
+        고객의 사랑에 보답하겠습니다.
+      </p>
+    </div>
+    <div class="about-com-img-wrap">
+      <!--형제:이미지+텍스트-->
+      <!-- <img src="./img/about.jpg"> -->
+
+      <!--형제:아이콘+텍스트-->
+      <div class="about-icon-wrap">
+        <div class="about-icon1">
+          <a href="#">
+            <div class="icon-wrap1">
+              <img src="./assets/icon/company.png" alt="icon1" />
+            </div>
+            <h3>회사소개</h3>
+            <p>
+              아름다운 건강과 행복을 추구하는<br />
+              경남제약을 소개합니다.
+            </p>
+          </a>
+        </div>
+        <div class="about-icon2">
+          <a href="#">
+            <div class="icon-wrap2">
+              <img src="./assets/icon/ph_graph.png" alt="icon2" />
+            </div>
+            <h3>사업장 현황</h3>
+            <p>
+              전국의 경남제약 사업장 위치와<br />
+              연락처를 안내합니다
+            </p>
+          </a>
+        </div>
+
+        <div class="about-icon3">
+          <a href="#">
+            <div class="icon-wrap3">
+              <img src="./assets/icon/graph-line.png" alt="icon3" />
+            </div>
+            <h3>IR</h3>
+            <p>
+              경남제약은 정확한 재무정보와<br />
+              고객의 내일을 설계합니다.
+            </p>
+          </a>
+        </div>
+        <div class="about-icon4">
+          <a href="#">
+            <div class="icon-wrap4">
+              <img src="./assets/icon/employee.png" alt="icon4" />
+            </div>
+            <h3>인재상</h3>
+            <p>
+              끊임없는 도전과 탁월한 성과를<br />
+              창출하는 경남제약의 미래를<br />
+              이끌어갈 인재를 찾습니다.
+            </p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--홍보센터-->
+  <section class="press">
+    <div class="press-txt-wrap">
+      <!--형제:버튼+텍스트-->
+      <div class="press-txt">
+        <h3>PR CENTER</h3>
+        <p>경남제약의 각종 홍보소식과 광고 영상을 만나보세요.</p>
+      </div>
+
+      <div class="press-menu">
+        <ul>
+          <li><a href="#">뉴스</a></li>
+          <li class="on"><a href="#">영상</a></li>
+          <li><a href="#">인쇄</a></li>
+          <li><a href="#">라디오</a></li>
+        </ul>
+        <div class="press-bar-wrap">
+          <div class="press-bar">
+            <div class="bold-bar"></div>
+            <div class="bar"></div>
+          </div>
+
+          <div class="bar-btn">
+            <a href="#"><img src="./assets/icon/arrow.png" alt="icon" /></a>
+            <a href="#"><img src="./assets/icon/arrow-right.png" alt="icon" /></a>
+          </div>
+        </div>
+      </div>
+
+      <!--형제:영상이미지+텍스트-->
+      <div class="press-wrap">
+        <div class="press1">
+          <a href="#">
+            <div class="press-img-wrap">
+              <img src="./assets/img/prcenter1_press.jpg" alt="press" />
+            </div>
+            <h3>레모나핑크|트와이스 광고 15초|나연,미나,사나ver.</h3>
+            <p>
+              아침 저녁 세안 전에 ‘핑크케어’ 스킨케어 하기전에 ‘핑크케어’
+              <br />
+              매일매일 피부 비타민 레모나 핑크
+            </p>
+          </a>
+        </div>
+        <div class="press2">
+          <a href="#">
+            <div class="press-img-wrap">
+              <img src="./assets/img/prcenter2-press.jpg" alt="press" />
+            </div>
+            <h3>레모나핑크|트와이스 광고 15초|나연,미나,사나ver.</h3>
+            <p>
+              아침 저녁 세안 전에 ‘핑크케어’ 스킨케어 하기전에 ‘핑크케어’
+              <br />
+              매일매일 피부 비타민 레모나 핑크
+            </p>
+          </a>
+        </div>
+        <div class="press3">
+          <a href="#">
+            <div class="press-img-wrap">
+              <img src="./assets/img/prcenter3-press.jpg" alt="press" />
+            </div>
+            <h3>레모나핑크|트와이스 광고 15초|나연,미나,사나ver.</h3>
+            <p>
+              아침 저녁 세안 전에 ‘핑크케어’ 스킨케어 하기전에 ‘핑크케어’
+              <br />
+              매일매일 피부 비타민 레모나 핑크
+            </p>
+          </a>
+        </div>
+        <div class="press4">
+          <a href="#">
+            <div class="press-img-wrap">
+              <img src="./assets/img/prcenter4-press.jpg" alt="press" />
+            </div>
+            <h3>레모나핑크|트와이스 광고 15초|나연,미나,사나ver.</h3>
+            <p>
+              아침 저녁 세안 전에 ‘핑크케어’ 스킨케어 하기전에 ‘핑크케어’
+              <br />
+              매일매일 피부 비타민 레모나 핑크
+            </p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--푸터-->
+  <footer>
+    <div class="foot-wrap">
+      <div class="foot-top">
+        <ul>
+          <li><a href="#">개인정보처리방침</a></li>
+          <li><a href="#">이용약관</a></li>
+          <li><a href="#">이메일무단수집거부</a></li>
+          <li><a href="#">문의하기</a></li>
+          <li><a href="#">윤리경영</a></li>
+        </ul>
+      </div>
+      <div class="f-line"></div>
+      <div class="foot-bottom-container">
+        <address>
+          <span>경남제약(주)</span>
+          <span>대표이사 김성곤</span>
+          <span>사업자등록번호 134-81-42258</span><br />
+          <span>국내영업 문의(약국,의약품도매) : 02-3490-5175</span>
+          <span>국내영업 문의(유통) : 02-3490-5135, 5142</span><br />
+          <span>해외영업 문의 : 02-3490-5160</span>
+          <span>소비자상담: 080-232-8600</span>
+          <span>광고/제휴 문의: mkt123@knpharm.co.kr</span><br />
+          <span>[서울]서울특별시 강남구 언주로 702(논현동, 경남제약 타워)
+            6층,7층,8층,11층</span><br />
+          <span>[본사]경상남도 의령군 의령읍 구룡로4남길 79</span><br />
+          <span>Copyright ⓒ KYUNG NAM PHARM CO.,LTD. ALL RIGHTS RESERVED.r</span>
+        </address>
+      </div>
+    </div>
+  </footer>
+  <!-- </div> -->
+</body>
+
+</html>
